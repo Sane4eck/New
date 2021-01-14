@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+</head>
+<body style="background-color: #000000">
+<form action="/auth/register/" method="post">
+    {% csrf_token %}
+
+    <label for="username" style="background-color: #FFFFFF"> Введите имя пользователя!:</label>
+    <input type="text" name="username" id="username">
+    <label for="email" style="background-color: #FFFFFF"> Введите email!:</label>
+    <input type="email" name="email" id="email">
+    <label for="password" style="background-color: #FFFFFF">Введите пароль!:</label>
+    <input type="password" name="password" id="password">
+    <label for="password_again" style="background-color: #FFFFFF">Введите повторно пароль!:</label>
+    <input type="password" name="password_again" id="password_again">
+
+    <button type="submit" style="background-color: #0000FF	">Зарегистрироваться!</button>
+    <a href="/auth/login/" class="btn" style="background-color: #00FF00" > Войти </a>
+
+</form>
+
+</body>
+</html>

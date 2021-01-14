@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{% block title %} Главная {% endblock %}
+
+{% block content %}
+<div style="background-color: #00CC99">
+        <table class="table" border="10">
+            <thead>
+            <tr>
+                <th scope="col" style="background-color: #ADFF2F">Email</th>
+                <th scope="col" style="background-color: #FFFF00">Username</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for e in list_login %}
+            <tr>
+                <td style="background-color: #ADFF2F">{{e.email}}</td>
+                <td style="background-color: #FFFF00">{{e.username}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

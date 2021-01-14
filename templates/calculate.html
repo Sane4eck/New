@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %} Калькулятор {% endblock %}
+{%block content%}
+
+
+
+    <div style="background-color: #00BFFF">
+    <h1 style="background-color: #FF4500">{{response00}}</h1>
+
+
+        <form action="/calculate/" method="post" >
+            {% csrf_token %}
+
+                <label for="first_number" style="background-color: #FF00FF"> Первое число</label>
+                <input type="number" name="first_number" id="first_number" style="background-color: #FF00FF">
+                <label for="second_number" style="background-color: #00FF00">Второе число</label>
+                <input type="number"  name="second_number" id="second_number" style="background-color: #00FF00">
+                <button type="submit" style="background-color: #FFFF00">Сфунциклировать</button>
+        </form>
+    </div>
+    <div style="background-color: #00CC99">
+        <table class="table" border="10">
+            <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col" style="background-color: #FF00FF">first_number</th>
+                <th scope="col" style="background-color: #00FF00">second_number</th>
+                <th scope="col" style="background-color: #ADFF2F">summa</th>
+                <th scope="col" style="background-color: #B0E0E6">minus</th>
+                <th scope="col" style="background-color: #DDA0DD">division</th>
+                <th scope="col" style="background-color: #CD5C5C">multiply</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for r in list_calculate %}
+            <tr>
+                <td>{{r.id}}</td>
+                <td style="background-color: #FF00FF">{{r.first_number}}</td>
+                <td style="background-color: #00FF00">{{r.second_number}}</td>
+                <td style="background-color: #ADFF2F">{{r.summa}}</td>
+                <td style="background-color: #B0E0E6">{{r.minus}}</td>
+                <td style="background-color: #DDA0DD">{{r.division}}</td>
+                <td style="background-color: #CD5C5C">{{r.multiply}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{%endblock%}

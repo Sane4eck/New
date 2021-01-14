@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Чат{% endblock %}
+{% block content %}
+
+
+<!--    <h1 style="background-color: #00FFFF">Это траница ЧАТА!</h1>-->
+<!--    <h2 style="background-color: #9ACD32">Сообщение: {{ massage_list }}</h2>-->
+<!--    <h2 style="background-color: #FFFF00">Чат: {{ chat_list }}</h2>-->
+<!--            <form action="/chat/" method="post">-->
+<!--                {% csrf_token %}-->
+<!--            -->
+<!--            -->
+<!--                <label for="text" style="background-color: #00FF00">Text</label>-->
+<!--                <input type="text" name="description" id="description" style="background-color: #00FF00">-->
+<!--                <button type="submit" style="background-color: #FFFF00">Сфунциклировать</button>-->
+<!--            </form>-->
+<div style="background-color: #00CC99">
+    <table class="table" border="10">
+        <thead>
+        <tr>
+            <th scope="col" style="background-color: #ADFF2F">Name</th>
+            <th scope="col" style="background-color: #FFFF00">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for e in chat_list %}
+        <tr>
+            <td style="background-color: #ADFF2F">{{e.name}}</td>
+            <td style="background-color: #FFFF00">{{e.description}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div style="background-color: #00CC99">
+    <table class="table" border="10">
+        <thead>
+        <tr>
+            <th scope="col" style="background-color: #ADFF2F">User_id</th>
+            <th scope="col" style="background-color: #FFFF00">Text</th>
+            <th scope="col" style="background-color: #FFFF00">Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for e in massage_list %}
+        <tr>
+            <td style="background-color: #ADFF2F">{{e.user_id}}</td>
+            <td style="background-color: #FFFF00">{{e.text}}</td>
+            <td style="background-color: #FFFF00">{{e.time}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
